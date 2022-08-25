@@ -7,4 +7,8 @@ export default createGlobalStyle`
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
   }
+
+  body {
+    background: #FFFFFF;
+  }
 `
