@@ -1,11 +1,14 @@
 import styled from "styled-components";
 
 export const FooterWrapper = styled.footer`
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 34px;
   background: #EEEEEE;
-  top: 748px;
+
+  position: fixed;
+  bottom: 0;
+  left: 0;
 
   color: #000000;
   text-align: center;
@@ -14,6 +17,6 @@ export const FooterWrapper = styled.footer`
   
   p {
     position: relative;
-    margin-top: 8px;
+    margin-top: 10px;
   }
 `;

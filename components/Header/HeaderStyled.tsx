@@ -1,13 +1,18 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.header`
+  background: #0f52ba;
+  width: 100vw;
+  height: 48px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-bottom: 1em;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 23px;
-  background: #0f52ba;
-  width: 100vw;
-  height: 48px;
 
   color: #ffffff;
 
