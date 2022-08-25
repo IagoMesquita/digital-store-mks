@@ -20,6 +20,7 @@ export const HeaderWrapper = styled.header`
     font-size: 16px;
     line-height: 19px;
   }
+  
   span {
     font-weight: 600;
     font-size: 32px;

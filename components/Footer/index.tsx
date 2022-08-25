@@ -3,7 +3,7 @@ import { FooterWrapper  } from './FooterStyled';
 function Footer() {
   return (
     <FooterWrapper>
-      <p>Footer</p>
+      <p>MKS Sistemas © Todos os direitos reservados</p>
     </FooterWrapper>
   )
 }
