@@ -1,7 +1,7 @@
 import React from 'react'
 import Header from './Header'
 import Footer from './Footer'
-import Sidbar from './Sidbar';
+import Sidebar from './Sidebar';
 
 
 interface LayoutProps {
@@ -10,7 +10,7 @@ interface LayoutProps {
 function MainCotainer({children}: LayoutProps) {
   return (
     <>
-      <Sidbar/>
+      <Sidebar/>
       <Header />
         <div>{children}</div>
       <Footer/>

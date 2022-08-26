@@ -12,17 +12,18 @@ export const CardContainer = styled.div`
   border-radius: 8px;
 
   margin: 1.2em auto;
+
   
 `
 
 export const InfoProductStyled = styled.div`
   display: flex;
-  /* justify-content: space-between; */
+  justify-content: space-evenly;
   padding: 0 .5em;
-  border: solid 1px red;
   flex-wrap: wrap;
 
-  border: solid 1px blue;
+  margin-bottom: 1em;
+
 `
 
 export const PriceStyle = styled.div`
@@ -53,7 +54,6 @@ export const TextNames = styled.div`
   font-size: 16px;
   color: #2c2c2c;
 
-  border: solid 1px red;
 
   p {
     margin-right: .2em;
@@ -61,6 +61,13 @@ export const TextNames = styled.div`
 
   }
 `
+
+export const Description = styled.p`
+  font-weight: 300;
+  font-size: 10px;
+  padding: 0 2em;
+` 
+
 export const ButtonCard = styled.button`
   background: #0F52BA;
   border-radius: 0px 0px 8px 8px;
@@ -72,4 +79,10 @@ export const ButtonCard = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   font-size: 14px;
+`
+
+export const ImgContainer = styled.div`
+  display: flex;
+  justify-content: center;
+  margin-top: .3em;
 `

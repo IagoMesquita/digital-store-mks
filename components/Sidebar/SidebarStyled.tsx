@@ -2,14 +2,31 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
   height: 100vh;
-  width: ${(props) => (props.isOpened ? "330px" : "0vw")};;
+  /* width: ${(props) => (props.isOpened ? "330px" : "0vw")}; */
+  width: 330px;
   background: #0F52BA;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
 
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 20;
+
+  display: ${(props) => (props.isOpened ? 'block' : 'none')}; 
+  /* display: ${(props) => (props.isOpened ? 'none' : 'block')};  */
+
+  main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: .8em;
+
+    flex: 1;
+    overflow-y: scroll;
+    overflow: overlay;
+    border: solid 1.5px red;
+  }
 `
 
 export const HeaderSidebar = styled.div`
@@ -24,6 +41,10 @@ export const HeaderSidebar = styled.div`
   }
 `
 export const ButtonClosedStyled = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   background: #000000;  
   height: 45.92px;
   width: 45.92px;
@@ -40,7 +61,7 @@ export const ButtonClosedStyled = styled.div`
 export const FooterSidebar = styled.div`
   display: flex;
   flex-direction: column;
-  align-content: stretch;
+  /* align-content: stretch; */
   width: 100%;
 
 
@@ -53,6 +74,7 @@ export const TextTotalPrice = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 98px;
+  background: #0F52BA;
 
   color: #ffff;
   font-weight: 700;

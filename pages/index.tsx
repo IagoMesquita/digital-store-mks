@@ -4,6 +4,7 @@ import { IProduct } from '../interface/IProduct'
 import { MainContainer } from '../styles/MainStyled'
 // components
 import CardProduct from '../components/CardProduct'
+import { CardContainer } from '../components/CardProduct/CardProductStyled'
 
 
 

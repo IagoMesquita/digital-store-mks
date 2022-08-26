@@ -1,5 +1,8 @@
 import React, { useState } from "react";
-// import useToggleSidebar from "../../hooks/useToggleSidebar";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "../../redux/store";
+import { closedSidebar } from "../../redux/toggleSidebarSlice";
+import CartProduct from "../CartProduct";
 import {
   SidebarContainer,
   HeaderSidebar,
@@ -12,17 +15,21 @@ import {
 type Props = {};
 
 function Sidbar({}: Props) {
-  const [isOpened, setIsOpened] = useState(false);
-  // const { isOpened, setIsOpened } = useToggleSidebar()
+  const dispatch = useDispatch();
+
+  const isOpened: boolean = useSelector((state: RootState) => state.toggleSidebar.value );
 
   return (
     <SidebarContainer isOpened={isOpened}>
       <HeaderSidebar>
         <p>Carinho de compras</p>
-        <ButtonClosedStyled onClick={() => setIsOpened(!isOpened)}>
+        <ButtonClosedStyled onClick={() => dispatch(closedSidebar())}>
           <span>X</span>
         </ButtonClosedStyled>
       </HeaderSidebar>
+      <main>
+        <CartProduct />
+      </main>
       <FooterSidebar>
         <TextTotalPrice>
           <p>Total:</p>
