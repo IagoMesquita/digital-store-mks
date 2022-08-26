@@ -40,7 +40,7 @@ function CardProduct({ product }: ProductProp) {
   //     });
   //     // localStorage.setItem('cart', JSON.stringify(cart));
   //   } else {
-    const cart: ICart[] = JSON.parse(localStorage.getItem('cart') || '') || [];
+    // const cart: ICart[] = JSON.parse(localStorage.getItem('cart') || '') || [];
   //     cart.push({ ...product, qtd: countProduct.un + 1 });
   //     // localStorage.setItem('cart', JSON.stringify(cart));
   //   }
@@ -51,7 +51,7 @@ function CardProduct({ product }: ProductProp) {
   // const addProductInCart = (e: ChangeEvent<HTMLInputElement>) => {
   const addProductInCart = () => {
     dispatch(addProduct(product));
-
+    const cart: ICart[] = JSON.parse(localStorage.getItem('cart') || '') || [];
     console.log('get', cart)
     setCountProduct({ ...countProduct, un: countProduct.un + 1 });
     const ifContained = cart.some((prod: ICart) => prod.id === id);
