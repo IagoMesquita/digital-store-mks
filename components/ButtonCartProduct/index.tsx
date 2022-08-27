@@ -2,6 +2,7 @@ import React, { useState, useContext, useEffect, ChangeEvent } from 'react';
 import { ICart } from '../../interface/ICart';
 import { IProduct } from '../../interface/IProduct';
 import formatCurrency from '../../utils/formartCurrency';
+import { ContainerButton } from './ButtonCartProductStyled';
 
 interface ProductProp {
   product: IProduct
@@ -47,7 +48,7 @@ function ButtonCardProduc({ product }: ProductProp) {
   };
 
   const addProduct = () => {
-    const cart = JSON.parse(localStorage.getItem('cart') || '') || [];
+    const cart = JSON.parse(localStorage.getItem('cart')!) || [];
     setCountProduct({ ...countProduct, un: countProduct.un + 1 });
     const ifContained = cart.some((prod: ICart) => prod.id === id);
     if (ifContained) {
@@ -56,17 +57,15 @@ function ButtonCardProduc({ product }: ProductProp) {
           prod.qtd += 1;
         }
       });
-      // localStorage.setItem('cart', JSON.stringify(cart));
     } else {
       cart.push({ ...product, qtd: countProduct.un + 1 });
-      // localStorage.setItem('cart', JSON.stringify(cart));
     }
     localStorage.setItem('cart', JSON.stringify(cart));
   };
 
   const handleCoutProduct = (event: ChangeEvent<HTMLInputElement>  ) => {
     const { value } = event.target;
-    const cart = JSON.parse(localStorage.getItem('cart') || '') || [];
+    const cart = JSON.parse(localStorage.getItem('cart')!) || [];
     setCountProduct({ ...countProduct, un: Number(value) });
     const ifContained = cart.some((prod: IProduct) => prod.id === product.id);
     if (ifContained) {
@@ -75,40 +74,36 @@ function ButtonCardProduc({ product }: ProductProp) {
           prod.qtd = Number(value);
         }
       });
-      // localStorage.setItem('cart', JSON.stringify(cart));
+
     } else {
       cart.push({ ...product, qtd: value });
-      // localStorage.setItem('cart', JSON.stringify(cart));
     }
     const filteredCart = cart.filter((prod: ICart) => prod.qtd !== 0);
     localStorage.setItem('cart', JSON.stringify(filteredCart));
   };
   return (
-    <div className="btn-rm-add">
+    <ContainerButton>
       <button
-        data-testid={ `customer_products__button-card-rm-item-${product.id}` }
-        className="btn-rm"
+        className='btn-dec'
         type="button"
         onClick={ removeProduct }
       >
         -
       </button>
       <input
-        data-testid={ `customer_products__input-card-quantity-${product.id}` }
         value={ countProduct.un }
         onChange={ handleCoutProduct }
         type="number"
         min={ 0 }
       />
       <button
-        data-testid={ `customer_products__button-card-add-item-${product.id}` }
-        className="btn-add"
+        className='btn-add'
         type="button"
         onClick={ addProduct }
       >
         +
       </button>
-    </div>
+    </ContainerButton>
   );
 }
 

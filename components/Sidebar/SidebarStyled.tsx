@@ -25,7 +25,6 @@ export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
     flex: 1;
     overflow-y: scroll;
     overflow: overlay;
-    border: solid 1.5px red;
   }
 `
 
