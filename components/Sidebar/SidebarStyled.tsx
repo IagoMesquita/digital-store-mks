@@ -56,6 +56,7 @@ export const ButtonClosedStyled = styled.div`
     font-weight: 400;
     font-size: 44px;
     text-align: center;
+    
   }
 `
 
