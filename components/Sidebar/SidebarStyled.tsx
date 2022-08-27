@@ -2,10 +2,12 @@ import styled from "styled-components";
 
 export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
   height: 100vh;
-  /* width: ${(props) => (props.isOpened ? "330px" : "0vw")}; */
   width: 330px;
   background: #0F52BA;
   box-shadow: -5px 0px 6px rgba(0, 0, 0, 0.13);
+
+  padding-right: 1em;
+  padding-top: .5em;
 
   position: fixed;
   top: 0;
@@ -13,7 +15,6 @@ export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
   z-index: 20;
 
   display: ${(props) => (props.isOpened ? 'block' : 'none')}; 
-  /* display: ${(props) => (props.isOpened ? 'none' : 'block')};  */
 
   main {
     height: 60vh;
@@ -30,7 +31,8 @@ export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
 
 export const HeaderSidebar = styled.div`
   display: flex;
-  justify-content: space-between;
+  padding: .2em 0 1em 2em;
+  /* justify-content: space-between; */
 
   p {
     text-align: left;
@@ -70,9 +72,9 @@ export const FooterSidebar = styled.div`
 
 export const TextTotalPrice = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  height: 98px;
+  height: 70px;
   background: #0F52BA;
 
   color: #ffff;
@@ -82,7 +84,7 @@ export const TextTotalPrice = styled.div`
 
 export const ButtonFinish = styled.button`
   background: #000000;
-  height: 65.86px;
+  height: 63px;
 
   color: #ffff;
   font-weight: bold;
