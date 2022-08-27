@@ -14,6 +14,7 @@ import {
 } from "./CardProductStyled";
 import { useDispatch, useSelector } from "react-redux";
 import { addProduct } from "../../redux/productSlice";
+import { RootState } from "../../redux/store";
 
 interface ProductProp {
   product: IProduct;
@@ -23,9 +24,10 @@ interface ProductProp {
 function CardProduct({ product }: ProductProp) {
   const { id } = product;
   const [countProduct, setCountProduct] = useState({ un: 0 });
-  const dispatch = useDispatch();
 
-  
+  const dispatch = useDispatch();
+  const stateRedux = useSelector((state: RootState) => state.productCart);
+  console.log("redux", stateRedux)
   const addProductLs = () => {
     const cart: ICart[] = JSON.parse(localStorage.getItem('cart')!) || [];
     setCountProduct({ ...countProduct, un: countProduct.un + 1 });
@@ -45,6 +47,7 @@ function CardProduct({ product }: ProductProp) {
 
   const addProductInCart = () => {
     dispatch(addProduct(product));
+
     addProductLs()
   };
 

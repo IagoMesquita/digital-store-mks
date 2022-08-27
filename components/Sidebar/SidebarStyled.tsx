@@ -16,7 +16,7 @@ export const SidebarContainer = styled.aside<{ isOpened: boolean }>`
   /* display: ${(props) => (props.isOpened ? 'none' : 'block')};  */
 
   main {
-    height: 100%;
+    height: 60vh;
     display: flex;
     flex-direction: column;
     align-items: center;
