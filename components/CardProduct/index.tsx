@@ -27,7 +27,6 @@ function CardProduct({ product }: ProductProp) {
 
   const dispatch = useDispatch();
   const stateRedux = useSelector((state: RootState) => state.productCart);
-  console.log("redux", stateRedux)
   const addProductLs = () => {
     const cart: ICart[] = JSON.parse(localStorage.getItem('cart')!) || [];
     setCountProduct({ ...countProduct, un: countProduct.un + 1 });
